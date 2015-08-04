@@ -1,0 +1,246 @@
+* {
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	Visibility: hidden;
+	Display: block;
+	Font-size: 0;
+	Content: " ";
+	Clear: both;
+	Height: 0;
+}
+
+/* MAIN STYLES */
+
+
+body {
+	font-size: 16px;
+  	font-family: 'Source Sans Pro', sans-serif;
+	background-color: #5486ad;
+	margin: 0 auto;
+}
+
+.row {
+	height: 400px;
+	margin: 1.25em auto;
+	position: relative;
+	max-width: 1080px;
+}
+
+/* HEADER */
+header {
+	text-transform: uppercase;
+	text-align: center;
+	width: 350px;
+	margin: 3em auto;
+}
+
+h1{
+	font-size: 3.2em;
+	background-color: #fff;
+	color: #053e6a;
+	font-weight: 700;
+	padding: .3em 0;
+	margin-bottom: 0em;
+}
+
+h4{
+	font-size: .9em;
+	background-color: #fff;
+	color: #f49a1a;
+	font-weight: 300;
+	padding: .37em;
+	letter-spacing: .16em;
+	margin-top: .5em;
+}
+
+/* INPUT FORM */
+button {
+	height: 35px;
+	width: 17px;
+	border: none;
+	outline: none;
+	font-weight: 700;
+	font-size: .5em;
+	background-color: rgba(0,0,0,0);
+	cursor: pointer;
+}
+
+.columns input {
+	height: 32px;
+	color: #053e6a;
+	padding-left: .5em;
+	border: none;
+	width: 70%;
+}
+
+/*.list{
+	font-size: .45em;
+	color: #053e6a;
+}*/
+
+.list ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.list li {
+	display: block;
+	height: auto;
+	width: 100%;
+	margin-bottom: 12px;
+	text-transform: none;
+	font-weight: 300;
+	text-align: left;
+	color: #053e6a;
+	margin-top: 13px;
+}
+
+li i {
+	 color: white;
+}
+
+i {
+	margin-left: 0px;
+}
+
+li span {
+	float: left;
+	padding: 10px;
+	background-color: #000;
+}
+
+.listitem {
+	background-color: #fff;
+	width: 80%;
+	height: auto;
+	display: block;
+	color: #053e6a;
+	margin-bottom: 0;
+}
+
+.itemparent.clearfix{
+	margin-top: .7em;
+	margin-bottom: .3em;
+}
+
+.additem {
+	margin-top: .25em;
+}
+
+.fa-minus {
+		cursor: pointer;
+}
+
+.itemparent {
+	font-size: .5em;
+	margin-left: 1em;
+/*	margin-top: .1em;
+*/}
+/*
+.addTask{
+	position: fixed;
+}*/
+
+/* COLUMNS */
+.columns {
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+  	font-size: 2em;
+  	text-transform: uppercase;
+  	float: left;
+  	/* changed this to .25em from .25em on the top and bottom and 10px on the side*/
+  	margin: .5rem;
+  	/* calc is one of a couple css functions. We want 1/3 minus the margins, so voila*/
+  	width: calc(33% - 1rem);
+  	height: 400px;
+  	padding: 1.3rem 0.5rem;
+}
+
+/*#books.columns h2 {
+	position: fixed;
+}*/
+
+#books {
+  background-color: #87c742;
+}
+
+#movies {
+  background-color: #f49a1a;
+}
+
+#restaurants {
+  	background-color: #05b8c3;
+}
+
+#travel {
+  background-color: #ffc60b;
+}
+
+#beer_wine {
+  background-color: #87c742;
+}
+
+#quotes_misc {
+  	background-color: #f49a1a;
+}
+
+footer {
+	font-size: .75em;
+	color: #fff;
+	letter-spacing: .10em;
+	float: right;
+	text-transform: uppercase;
+	margin-right: 2em;
+	margin-top: 4em;
+	margin-bottom: 2em;
+}
+
+
+/* RESPONSIVE */
+@media only screen and (max-width: 768px){
+.columns {
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+  	font-size: 2em;
+  	text-transform: uppercase;
+  	float: left;
+  	/*margin: .25em 10px;*/
+  	/*width: 47%;*/
+  	width: calc(50% - 0.5em);
+  	height: 400px;
+  	padding: .65em .25em;
+}
+
+footer {
+	font-size: .75em;
+	color: #fff;
+	letter-spacing: .10em;
+	float: right;
+	text-transform: uppercase;
+	margin-right: 3em;
+	margin-top: 4em;
+	margin-bottom: 2em;
+}
+
+
+@media only screen and (max-width: 550px){
+	.columns {
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+  	font-size: 2em;
+  	text-transform: uppercase;
+  	float: left;
+  	/*margin: .25em 10px;*/
+  	/*width: 47%;*/
+  	width: calc(100% - .5em);
+  	height: 400px;
+  	padding: .65em .25em;
+/*  	margin: 0 2rem;
+*/}
+}
+
