@@ -11,7 +11,7 @@ $(document).ready(function(){
 			$('#books ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
 			$('#books input.addTask').val("")
 		} else {
-			alert('Enter something');
+			('Enter something');
 		}
 	});
 
