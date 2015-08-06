@@ -1,4 +1,23 @@
+var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+
 $(document).ready(function(){
+	for(var i = 0; i < tasks.length; i++){
+		addTask(tasks[i]);
+	}
+
+	$('form').on('submit', function(event){
+		event.preventDefault();
+
+		var taskText = $('#taskName').val();
+		if(taskText){
+			addTask(taskText);
+			tasks.push(taskText);
+			saveTasks(tasks);
+			localStorage.setItem('tasks', JSON.stringify(tasks));
+			$('#taskName').val('');
+		}
+	});
 
 	
 // BOOKS
@@ -9,7 +28,7 @@ $(document).ready(function(){
 		var taskitem = $('#books input').val();
 		if(taskitem) {
 			$('#books ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
-			$('#books input.addTask').val("")
+			$('#books input.addjsTask').val("")
 		} else {
 			('Enter something');
 		}
@@ -36,7 +55,7 @@ $(document).ready(function(){
 		var taskitem = $('#movies input').val();
 		if(taskitem) {
 			$('#movies ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
-			$('#movies input.addTask').val("")
+			$('#movies input.addjsTask').val("")
 		} else {
 			alert('Enter something');
 		}
@@ -55,7 +74,7 @@ $(document).ready(function(){
 	});
 /////////////////////////////
 
-//RESTAURANTS
+	//RESTAURANTS
 
 	//This adds an item to the list
 	$('#restaurants form').on('submit', function(event){
@@ -63,7 +82,7 @@ $(document).ready(function(){
 		var taskitem = $('#restaurants input').val();
 		if(taskitem) {
 			$('#restaurants ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
-			$('#restaurants input.addTask').val("")
+			$('#restaurants input.addjsTask').val("")
 		} else {
 			alert('Enter something');
 		}
@@ -91,7 +110,7 @@ $(document).ready(function(){
 		var taskitem = $('#travel input').val();
 		if(taskitem) {
 			$('#travel ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
-			$('#travel input.addTask').val("")
+			$('#travel input.addjsTask').val("")
 		} else {
 			alert('Enter something');
 		}
@@ -118,7 +137,7 @@ $(document).ready(function(){
 		var taskitem = $('#beer_wine input').val();
 		if(taskitem) {
 			$('#beer_wine ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
-			$('#beer_wine input.addTask').val("")
+			$('#beer_wine input.addjsTask').val("")
 		} else {
 			alert('Enter something');
 		}
@@ -137,7 +156,7 @@ $(document).ready(function(){
 	});
 /////////////////////////////
 
-//QUOTES/MISC.
+	//QUOTES/MISC.
 
 	//This adds an item to the list
 	$('#quotes_misc form').on('submit', function(event){
@@ -145,7 +164,7 @@ $(document).ready(function(){
 		var taskitem = $('#quotes_misc input').val();
 		if(taskitem) {
 			$('#quotes_misc ul').append('<li class="itemparent clearfix"><span class="listitem">' + taskitem + '</span><span class="toolbar"><i class="fa fa-minus"></i></span></li>');
-			$('#quotes_misc input.addTask').val("")
+			$('#quotes_misc input.addjsTask').val("")
 		} else {
 			alert('Enter something');
 		}
@@ -167,3 +186,7 @@ $(document).ready(function(){
 
 
 });
+
+function saveTasks(tasks){
+	localStorage.setItem('tasks', JSON.stringify(tasks));
+}
